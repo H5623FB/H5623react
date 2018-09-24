@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    
+    }
+    .container > div {
+    flex: 1; /*grow*/
+    float: left;
+    clear: left;
+    }
+
+    .column {
+        
+        float: left;
+        /* width: 25%; */
+        
+        
+    }
+    .table {
+        table-layout: auto;
+        width: 80%;    
+    }
+    .list-item
+{
+    float: left;
+    clear: left;
+}
+
+ /* https://getbootstrap.com/docs/4.0/content/tables/    */
