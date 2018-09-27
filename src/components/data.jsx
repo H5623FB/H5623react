@@ -8,7 +8,7 @@ import Input from './inputfield';
 class Data extends Component {
       
     //state = { closing: [], items: ['J2o', 'Coke', 'Orange', 'Apple','Mango', 'Pepsi'] }
-    state = { items: [], opening: [], sale: [], closing: [], id:['1','2','3','4','5','6','7'] }
+    state = { items: [], opening: [], sale: [], closing: []}
     //constructor(props) {
        // super(props);
         // function handleinputs (){
@@ -51,12 +51,13 @@ class Data extends Component {
         this.setState({closing: closingqty});
         console.log(closingqty);
         });  
-    }  
+    } 
+   
     render() {
-        
+            
         return (
         
-            <div  styles={styles.wrapper} className="wrapper">
+        <div  styles={styles.wrapper} className="wrapper">
             
             <div styles={styles.header1} className="header1">Items</div>
             <div styles={styles.header2} className="header2"> Opening Stock</div>
@@ -65,50 +66,42 @@ class Data extends Component {
             <div styles={styles.header5} className="header5">Closing Stock</div>
               
             <div styles={styles.items} className="items">
-              {/* <span styles={styles.header} className="header">Items</span> */}
+              
               {this.state.items.map(i => (
                     <p styles={styles.rowstyle} className="rowstyle" key={i.id}>{i}</p>
                 ))}  
             </div> 
             <div styles={styles.opening} className="opening">
-              {/* <span styles={styles.header} className="header">Opening Stock</span> */}
+            
               {this.state.opening.map(o => (
                     <p styles={styles.rowstyle} className="rowstyle" key={o.id}>{o}</p>
                 ))}  
             </div>
               
             <div styles={styles.sale} className="sale">
-              {/* <span styles={styles.header} className="header">Sale</span> */}
+              
               {this.state.sale.map(s => (
                     <p styles={styles.rowstyle} className="rowstyle" key={s.id}>{s}</p>
                 ))}  
             </div>
               
             <div styles={styles.closing} className="closing">
-              {/* <span styles={styles.header} className="header">Closing Stock </span> */}
+             
               {this.state.closing.map(c => (
                     <p styles={styles.rowstyle} className="rowstyle" key={c.id}>{c}</p>
                 ))}  
             </div>
               
-            
-              <div styles={styles.inpute} className="inpute">
-              
-              {this.state.items.map(i=>(<Input id={i} styles={styles.inputee}  />))}
-              </div>
-             
+            <div styles={styles.inpute} className="inpute">
+              {this.state.items.map(i=>(<Input  id={i} />))}
             </div>
+             
+        </div>
           
                        
         );
     }
-count (){
-    return this.state.items.length;
- }
-inpute(){
-    let el = <input  className="form-control-sm" name="Closing Stock" type="text" placeholder="Closing Stock" />
-return el
- }
+
 }
 
 export default Data;
