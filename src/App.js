@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Data from './components/data';
+import Input from './components/inputfield';
 //import Gridcss from './components/cssgrid';
 import './App.css';
 

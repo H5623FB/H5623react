@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import fire from "../fbase";
 //import key from 'weak-key';
 import styles from "./styles.css";
+import Input from './inputfield';
 
 
 class Data extends Component {
       
     //state = { closing: [], items: ['J2o', 'Coke', 'Orange', 'Apple','Mango', 'Pepsi'] }
-    state = { items: [], opening: [], sale: [], closing: [], }
-    constructor(props) {
-        super(props);
+    state = { items: [], opening: [], sale: [], closing: [], id:['1','2','3','4','5','6','7'] }
+    //constructor(props) {
+       // super(props);
         // function handleinputs (){
             
         //     return (var len = this.state.items.opening.length;)
@@ -18,15 +19,16 @@ class Data extends Component {
         //handleinputs ()
         //this.state = { items: [] };
         //console.log(this.state.keys()); 
-        }
+       // }
     componentWillMount() {
         
         let itemRef = fire.database().ref("list/items");
         itemRef.on("value", snapshot => {
         let items = { id: snapshot.key, text: snapshot.val() };
         let itemnames = items.text;
+        //let itemid = items.id;
         this.setState({items: itemnames}); 
-        console.log(itemnames);
+        //console.log(itemid);
         });
         let openRef = fire.database().ref("list/opening");
         openRef.on("value", snapshot => {
@@ -89,14 +91,13 @@ class Data extends Component {
                 ))}  
             </div>
               
+            
               <div styles={styles.inpute} className="inpute">
-              {/* <span styles={styles.header} className="header">Closing Stock</span> */}
-              {this.state.closing.map(c => (
-                    <p styles={styles.rowstyle} className="rowstyle" key={c.id}>{this.inpute()}</p>
-                ))}
+              
+              {this.state.items.map(i=>(<Input id={i} styles={styles.inputee}  />))}
               </div>
              
-          </div>
+            </div>
           
                        
         );
@@ -105,9 +106,10 @@ count (){
     return this.state.items.length;
  }
 inpute(){
-    let el = <input className="form-control-sm" name="Closing Stock" type="text" placeholder="Closing Stock" />
+    let el = <input  className="form-control-sm" name="Closing Stock" type="text" placeholder="Closing Stock" />
 return el
  }
 }
 
 export default Data;
+

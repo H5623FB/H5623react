@@ -3,7 +3,7 @@
     grid-gap: 2px;
     grid-auto-flow:  column;   
     padding: 10px; 
-    grid-template-columns: auto-fit;
+    
     
 }
 .header1 {
@@ -89,6 +89,10 @@
  .inpute {
     display: grid;
     grid-column-start: 5;   
+ }
+ .inputee {
+    display: grid;
+    grid-column-start: 6;   
  }
  .rowstyle {
     display: grid;
