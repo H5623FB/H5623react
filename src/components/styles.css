@@ -1,105 +1,98 @@
 .wrapper {
-    display: grid;  
-    grid-gap: 2px;
-    grid-auto-flow:  column;   
-    padding: 10px; 
-    
-    
+  display: grid;
+  grid-gap: 2px;
+  grid-auto-flow: column;
+  padding: 10px;
 }
 .header1 {
-    display: grid;
-    grid-column-start: 1;
-    grid-row-start: 1; 
-    padding: 5px;
-    background-color: rgb(236, 236, 236);
-    font-weight: bold;     
-    border: 1px solid
+  display: grid;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  padding: 5px;
+  background-color: rgb(236, 236, 236);
+  font-weight: bold;
+  border: 1px solid;
 }
 .header2 {
-    display: grid;
-    grid-column-start: 2;
-    grid-row-start: 1; 
-    padding: 5px;
-    background-color: rgb(236, 236, 236);
-    font-weight: bold;
-    border: 1px solid
-    
-    
+  display: grid;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  padding: 5px;
+  background-color: rgb(236, 236, 236);
+  font-weight: bold;
+  border: 1px solid;
 }
 .header3 {
-    display: grid;
-    grid-column-start: 3;
-    grid-row-start: 1; 
-    padding: 5px;
-    background-color: rgb(236, 236, 236);
-    font-weight: bold;
-    border: 1px solid
-    
-   
+  display: grid;
+  grid-column-start: 3;
+  grid-row-start: 1;
+  padding: 5px;
+  background-color: rgb(236, 236, 236);
+  font-weight: bold;
+  border: 1px solid;
 }
 .header4 {
-    display: grid;
-    grid-column-start: 4;
-    grid-row-start: 1; 
-    padding: 5px; 
-    background-color: rgb(236, 236, 236);
-    font-weight: bold;
-    border: 1px solid
-    
+  display: grid;
+  grid-column-start: 4;
+  grid-row-start: 1;
+  padding: 5px;
+  background-color: rgb(236, 236, 236);
+  font-weight: bold;
+  border: 1px solid;
 }
 .header5 {
-    display: grid;
-    grid-column-start:5;
-    grid-row-start: 1; 
-    padding: 5px;
-    background-color: rgb(236, 236, 236);
-    font-weight: bold;
-    border: 1px solid
-    
-    
+  display: grid;
+  grid-column-start: 5;
+  grid-row-start: 1;
+  padding: 5px;
+  background-color: rgb(236, 236, 236);
+  font-weight: bold;
+  border: 1px solid;
 }
 .header6 {
-    display: grid;
-    grid-column-start: 6;
-    grid-row-start: 1; 
-    padding: 5px;
-    background-color: rgb(236, 236, 236);
-    font-weight: bold;
-    border: 1px solid
+  display: grid;
+  grid-column-start: 6;
+  grid-row-start: 1;
+  padding: 5px;
+  background-color: rgb(236, 236, 236);
+  font-weight: bold;
+  border: 1px solid;
 }
 .items {
-    display: grid;
-    font-weight: bold;
-    grid-column-start: 1; 
-      
- }
- .opening {
-    display: grid;
-    grid-column-start: 2;
-       
- }
- .sale {
-    display: grid;
-    grid-column-start: 3;   
- }
- .closing {
-    display: grid;
-    grid-column-start: 4;   
- }
- .inpute {
-    display: grid;
-    grid-column-start: 5;   
- }
- .inputee {
-    display: grid;
-    grid-column-start: 6;   
- }
- .rowstyle {
-    display: grid;
-    background-color: rgb(250, 250, 250);
- } 
+  display: grid;
+  padding: 5px;
+  font-weight: bold;
+  grid-column-start: 1;
+}
+.opening {
+  display: grid;
+  padding: 5px;
+  grid-column-start: 2;
+}
+.sale {
+  display: grid;
+  padding: 5px;
+  grid-column-start: 3;
+}
+.closing {
+  display: grid;
+  padding: 5px;
+  grid-column-start: 4;
+}
+.inpute {
+  display: grid;
+  grid-column-start: 5;
+}
+.inputee {
+  display: grid;
+  grid-column-start: 6;
+}
+.rowstyle {
+  display: grid;
+  background-color: rgb(252, 252, 253);
+}
 
- /* .wrapper {
+/* .wrapper {
     display: grid;
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
@@ -139,6 +132,6 @@
     grid-column: 3;
     grid-row: 4;
   } */
- /* https://getbootstrap.com/docs/4.0/content/tables/  
+/* https://getbootstrap.com/docs/4.0/content/tables/  
  https://itnext.io/building-a-dynamic-controlled-form-in-react-together-794a44ee552c
  */
