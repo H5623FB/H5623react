@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import fire from "../fbase";
+import Joi from "joi-browser";
 import styles from "./styles.css";
 
 class Data extends Component {
@@ -11,7 +12,23 @@ class Data extends Component {
     rid: [],
     value: ""
   };
+  schema = Joi.object().keys({
+    value: Joi.number()
+      .required()
+      .label("Submit"),
+    // password: Joi.string()
+    //   .required()
+    //   .label("Password")
+  });
+  validate = () => {
+    const options = { abortEarly: false };
+    const { error } = Joi.validate(this.state.value, this.schema, options);
+    if (!error) return null;
 
+    const errors = {};
+    for (let item of error.details) errors[item.path[0]] = item.message;
+    return errors;
+  };
   componentWillMount() {
     let itemRef = fire.database().ref("list/items");
     itemRef.on("value", snapshot => {
@@ -120,6 +137,7 @@ class Data extends Component {
                   <input
                     onChange={this.handleChange}
                     className="form-control"
+                    label="update"
                     type="text"
                     placeholder="Closing"
                     id={i}
@@ -133,9 +151,11 @@ class Data extends Component {
           <div>
             <button
               className="btn btn-success"
+              enabled={this.validate()}
               // styles={styles.rowstyle}
               // className="rowstyle"
               onClick={this.addMessage}
+              
             >
               Submit
             </button>

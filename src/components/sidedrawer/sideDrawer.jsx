@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import "./sideDrawer.css";
+import { Link, NavLink } from "react-router-dom";
 
-const SideDrawer = props => {
+const SideDrawer = props => (
+  
   <nav className="side-drawer">
     <ul>
       <li>
-        <a href="/">Home</a>
+        <Link to="/">Home</Link>
       </li>
     </ul>
-  </nav>;
-};
+  </nav>
+);
 export default SideDrawer;
