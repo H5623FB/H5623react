@@ -11,6 +11,7 @@
   padding: 5px;
   background-color: rgb(236, 236, 236);
   font-weight: bold;
+  text-align: center;
   border: 1px solid;
 }
 .header2 {
@@ -20,6 +21,7 @@
   padding: 5px;
   background-color: rgb(236, 236, 236);
   font-weight: bold;
+  text-align: center;
   border: 1px solid;
 }
 .header3 {
@@ -29,6 +31,7 @@
   padding: 5px;
   background-color: rgb(236, 236, 236);
   font-weight: bold;
+  text-align: center;
   border: 1px solid;
 }
 .header4 {
@@ -38,6 +41,7 @@
   padding: 5px;
   background-color: rgb(236, 236, 236);
   font-weight: bold;
+  text-align: center;
   border: 1px solid;
 }
 .header5 {
@@ -47,6 +51,7 @@
   padding: 5px;
   background-color: rgb(236, 236, 236);
   font-weight: bold;
+  text-align: center;
   border: 1px solid;
 }
 .header6 {
@@ -56,27 +61,34 @@
   padding: 5px;
   background-color: rgb(236, 236, 236);
   font-weight: bold;
+  text-align: center;
   border: 1px solid;
 }
 .items {
   display: grid;
   padding: 5px;
   font-weight: bold;
+  text-align: center;
   grid-column-start: 1;
 }
 .opening {
   display: grid;
   padding: 5px;
+  text-align: center;
   grid-column-start: 2;
 }
 .sale {
   display: grid;
   padding: 5px;
+  text-align: center;
   grid-column-start: 3;
 }
 .closing {
   display: grid;
   padding: 5px;
+  font-weight: bold;
+  text-align: center;
+  color: red;
   grid-column-start: 4;
 }
 .inpute {
@@ -89,7 +101,14 @@
 }
 .rowstyle {
   display: grid;
-  background-color: rgb(252, 252, 253);
+  background-color: rgb(251, 251, 251);
+}
+.navbar {
+  display: flex;
+  display: flex;
+  padding: 8px;
+  font-family: sans-serif;
+  color: white;
 }
 
 /* .wrapper {

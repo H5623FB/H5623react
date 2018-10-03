@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
-import styles from "./styles.css";
 
 class NavBar extends Component {
   render() {
@@ -8,15 +7,6 @@ class NavBar extends Component {
       <nav className="navbar navbar-dark bg-dark">
         <Link className="navbar-brand" to="/">
           ILEC F&B
-        </Link>
-        <Link className="Navbar_Link" to="/">
-          Login
-        </Link>
-        <Link className="Navbar_Link" to="/">
-          G&D daily closing
-        </Link>
-        <Link className="Navbar_Link" to="/">
-          G&D daily closing
         </Link>
         <button
           className="navbar-toggler"
@@ -31,15 +21,15 @@ class NavBar extends Component {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <NavLink className="nav-item nav-link" to="/closing">
+            <Navlink className="nav-item nav-link" to="/closing">
               Closing
-            </NavLink>
-            <NavLink className="nav-item nav-link" to="requisitions">
+            </Navlink>
+            <Navlink className="nav-item nav-link" to="requisitions">
               Requisitions
-            </NavLink>
-            <NavLink className="nav-item nav-link" to="login">
+            </Navlink>
+            <Navlink className="nav-item nav-link" to="login">
               Login
-            </NavLink>
+            </Navlink>
           </div>
         </div>
       </nav>
