@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import DrawerToggleButton from "../sidedrawer/drawerToggleButton";
 import "./toolbar.css";
 
 const toolbar = props => (
   <header className="toolbar">
     <nav className="toolbar_navigation">
-      <div>
-        <DrawerToggleButton />
+      <div className="toolbar__toggle-button">
+        <DrawerToggleButton click={props.drawerClickHandler} />
       </div>
 
       <div className="toolbar_logo">
-        <Link to="/">ILEC F&B UI</Link>
+        <NavLink to="/">ILEC F&B UI</NavLink>
       </div>
       <div className="spacer" />
       <div className="toolbar_navigation-items">

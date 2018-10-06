@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import { toast } from "react-toastify";
 import fire from "../fbase";
-import Joi from "joi-browser";
 import styles from "./styles.css";
 
 class Data extends Component {
@@ -11,23 +11,6 @@ class Data extends Component {
     closing: [],
     rid: [],
     value: ""
-  };
-  schema = Joi.object().keys({
-    value: Joi.number()
-      .required()
-      .label("Submit"),
-    // password: Joi.string()
-    //   .required()
-    //   .label("Password")
-  });
-  validate = () => {
-    const options = { abortEarly: false };
-    const { error } = Joi.validate(this.state.value, this.schema, options);
-    if (!error) return null;
-
-    const errors = {};
-    for (let item of error.details) errors[item.path[0]] = item.message;
-    return errors;
   };
   componentWillMount() {
     let itemRef = fire.database().ref("list/items");
@@ -69,6 +52,34 @@ class Data extends Component {
   addMessage = e => {
     e.preventDefault();
     let value = this.state.value;
+    let str = [];
+    let ridLen = this.state.rid.length;
+    const errors = {};
+
+    for (let key in value) {
+      str.push(value[key]);
+    }
+    let strLen = str.length;
+    function IsNumeric(n) {
+      return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+    if (strLen === 0) {
+      errors.message = "Each field has to be filled!";
+      return toast.error(errors.message);
+    }
+
+    for (let key in value) {
+      str += value[key];
+
+      if (IsNumeric(value[key]) === false) {
+        errors.message = "Only numbers accepted!";
+        return toast.error(errors.message);
+      }
+      if (strLen !== ridLen) {
+        errors.message = "Each field have to be filled!";
+        return toast.error(errors.message);
+      }
+    }
     fire
       .database()
       .ref("list/closing/")
@@ -149,14 +160,7 @@ class Data extends Component {
             </div>
           </div>
           <div>
-            <button
-              className="btn btn-success"
-              enabled={this.validate()}
-              // styles={styles.rowstyle}
-              // className="rowstyle"
-              onClick={this.addMessage}
-              
-            >
+            <button className="btn btn-success" onClick={this.addMessage}>
               Submit
             </button>
           </div>

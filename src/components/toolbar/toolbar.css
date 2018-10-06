@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(66, 66, 66, 0.952);
+  background: grey;
   height: 56px;
 }
 .toolbar_navigation {
@@ -18,7 +18,7 @@
 .toolbar_logo a {
   color: white;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .spacer {
@@ -40,5 +40,20 @@
 }
 .toolbar_navigation-items a:hover,
 .toolbar_navigation-items a:active {
-  color: red;
+  color: green;
+}
+
+@media (max-width: 768px) {
+  .toolbar_navigation-items {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .toolbar__toggle-button {
+    display: none;
+  }
+  .toolbar_logo {
+    margin-left: 0;
+  }
 }
