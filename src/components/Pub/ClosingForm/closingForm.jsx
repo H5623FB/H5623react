@@ -1,9 +1,17 @@
 import React, { Component } from "react";
 import { toast } from "react-toastify";
-import fire from "../fbase";
-import styles from "./styles.css";
+import fire from "../../../fbase";
 
-class Data extends Component {
+import Items from "./items";
+import Opening from "./opening";
+import Sale from "./sale";
+import Closing from "./closing";
+import UpdateClosing from "./updateClosing";
+import Submit from "./submit";
+
+import "./styles.css";
+
+class ClosingForm extends Component {
   state = {
     items: [],
     opening: [],
@@ -49,7 +57,7 @@ class Data extends Component {
     value[e.currentTarget.id] = e.currentTarget.value;
     this.setState({ value });
   };
-  addMessage = e => {
+  submitChange = e => {
     e.preventDefault();
     let value = this.state.value;
     let str = [];
@@ -93,80 +101,17 @@ class Data extends Component {
 
   render() {
     return (
-      <div>
-        <div styles={styles.wrapper} className="wrapper">
-          <div styles={styles.header1} className="header1">
-            Items
-          </div>
-          <div styles={styles.header2} className="header2">
-            Opening
-          </div>
-          <div styles={styles.header3} className="header3">
-            Sale
-          </div>
-          <div styles={styles.header4} className="header4">
-            Closing
-          </div>
-          <div styles={styles.header5} className="header5">
-            Update Closing
-          </div>
-
-          <div styles={styles.items} className="items">
-            {this.state.items.map(i => (
-              <p styles={styles.rowstyle} className="rowstyle" key={i.id}>
-                {i}
-              </p>
-            ))}
-          </div>
-          <div styles={styles.opening} className="opening">
-            {this.state.opening.map(o => (
-              <p styles={styles.rowstyle} className="rowstyle" key={o.id}>
-                {o}
-              </p>
-            ))}
-          </div>
-
-          <div styles={styles.sale} className="sale">
-            {this.state.sale.map(s => (
-              <p styles={styles.rowstyle} className="rowstyle" key={s.id}>
-                {s}
-              </p>
-            ))}
-          </div>
-
-          <div styles={styles.closing} className="closing">
-            {this.state.closing.map(c => (
-              <p styles={styles.rowstyle} className="rowstyle" key={c.id}>
-                {c}
-              </p>
-            ))}
-          </div>
-          <div>
-            <div>
-              <form id="myform" styles={styles.inpute} className="inpute">
-                {this.state.rid.map(i => (
-                  <input
-                    onChange={this.handleChange}
-                    className="form-control"
-                    label="update"
-                    type="text"
-                    placeholder="Closing"
-                    id={i}
-                    key={i}
-                    name="myForm"
-                  />
-                ))}
-              </form>
-            </div>
-          </div>
-          <div>
-            <button className="btn btn-success" onClick={this.addMessage}>
-              Submit
-            </button>
-          </div>
+      <React.Fragment>
+        <div className="wrapper">
+          <Items items= {this.state.items} />
+          <Opening opening= {this.state.opening} />
+          <Sale sale={this.state.sale} />
+          <Closing closing={this.state.closing} />
+          <UpdateClosing rid={this.state.rid} change={this.handleChange} />
+          <Submit submit={this.submitChange} />
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
-export default Data;
+export default ClosingForm;
