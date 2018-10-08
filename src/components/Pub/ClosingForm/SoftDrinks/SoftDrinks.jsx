@@ -1,15 +1,11 @@
 import React, { Component } from "react";
 import { toast } from "react-toastify";
-import fire from "../../../fbase";
+import fire from "../../../../fbase";
 
-import Items from "./items";
-import Opening from "./opening";
-import Sale from "./sale";
-import Closing from "./closing";
-import UpdateClosing from "./updateClosing";
-import Submit from "./submit";
+import {Items, Opening, Sale, Closing, UpdateClosing} from "./softDrinkParts";
 
-import "./styles.css";
+import Submit from "../submit";
+import "../../../styles.css";
 
 class ClosingForm extends Component {
   state = {
@@ -57,44 +53,44 @@ class ClosingForm extends Component {
     value[e.currentTarget.id] = e.currentTarget.value;
     this.setState({ value });
   };
-  submitChange = e => {
-    e.preventDefault();
-    let value = this.state.value;
-    let str = [];
-    let ridLen = this.state.rid.length;
-    const errors = {};
+    submitChange = e => {
+      e.preventDefault();
+      let value = this.state.value;
+      let str = [];
+      let ridLen = this.state.rid.length;
+      const errors = {};
 
-    for (let key in value) {
-      str.push(value[key]);
-    }
-    let strLen = str.length;
-    function IsNumeric(n) {
-      return !isNaN(parseFloat(n)) && isFinite(n);
-    }
-    if (strLen === 0) {
-      errors.message = "Each field has to be filled!";
-      return toast.error(errors.message);
-    }
-
-    for (let key in value) {
-      str += value[key];
-
-      if (IsNumeric(value[key]) === false) {
-        errors.message = "Only numbers accepted!";
+      for (let key in value) {
+        str.push(value[key]);
+      }
+      let strLen = str.length;
+      function IsNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+      }
+      if (strLen === 0) {
+        errors.message = "Each field has to be filled!";
         return toast.error(errors.message);
       }
-      if (strLen !== ridLen) {
-        errors.message = "Each field have to be filled!";
-        return toast.error(errors.message);
-      }
-    }
-    fire
-      .database()
-      .ref("list/closing/")
 
-      .set(value);
-    this.cancelCourse();
-  };
+      for (let key in value) {
+        str += value[key];
+
+        if (IsNumeric(value[key]) === false) {
+          errors.message = "Only numbers accepted!";
+          return toast.error(errors.message);
+        }
+        if (strLen !== ridLen) {
+          errors.message = "Each field have to be filled!";
+          return toast.error(errors.message);
+        }
+      }
+      fire
+        .database()
+        .ref("list/closing/")
+
+        .set(value);
+      this.cancelCourse();
+    };
   cancelCourse = () => {
     document.getElementById("myform").reset();
   };
