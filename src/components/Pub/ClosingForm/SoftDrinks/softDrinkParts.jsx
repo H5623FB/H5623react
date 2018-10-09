@@ -3,7 +3,6 @@ import "../../../styles.css";
 
 const Items = ({ items }) => (
   <div>
-
     <div className="items">
       {items.map((i, y) => (
         <p className="rowstyle" key={y}>
@@ -119,7 +118,7 @@ const UpdateClosing = ({ rid, change }) => (
         {rid.map(i => (
           <input
             onChange={change}
-            size="3"
+            size="7"
             // className="form-control-sm"
             type="text"
             placeholder="Closing"

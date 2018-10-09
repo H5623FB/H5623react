@@ -7,7 +7,6 @@ import {
   Opening,
   Sale,
   Closing,
-  Comments,
   Delivered,
   Difference,
   PAR,
@@ -174,7 +173,6 @@ class ClosingForm extends Component {
           <Closing closing={this.state.closing} />
           <Difference difference={this.state.difference} />
           <UpdateClosing rid={this.state.rid} change={this.handleChange} />
-          {/* <Comments comments={this.state.comments} /> */}
           <Submit submit={this.submitChange} />
         </div>
       </React.Fragment>

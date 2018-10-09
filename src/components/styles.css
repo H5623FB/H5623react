@@ -1,4 +1,4 @@
-.container{
+.container {
   display: grid;
   grid-auto-flow: auto;
   text-align: center;
@@ -12,14 +12,13 @@
   grid-column-gap: 6px;
   grid-auto-flow: column;
   padding: 5px;
-  font-size: 13px;
+  font-size: 16px;
   text-align: center;
   justify-items: start;
   justify-content: center;
-  
 }
 
-.head{
+.head {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-row-start: 1;
@@ -32,7 +31,7 @@
   font-weight: bold;
   grid-column-start: 1;
   grid-row-start: 2;
-  margin:0;
+  margin: 0;
 }
 .par {
   display: grid;
@@ -40,7 +39,7 @@
   text-align: center;
   grid-column-start: 2;
   grid-row-start: 2;
-  margin:0;
+  margin: 0;
 }
 .opening {
   display: grid;
@@ -48,7 +47,7 @@
   text-align: center;
   grid-column-start: 3;
   grid-row-start: 2;
-  margin:0;
+  margin: 0;
 }
 .delivered {
   display: grid;
@@ -56,7 +55,7 @@
   text-align: center;
   grid-column-start: 4;
   grid-row-start: 2;
-  margin:0;
+  margin: 0;
 }
 .transfers {
   display: grid;
@@ -64,7 +63,7 @@
   text-align: center;
   grid-column-start: 5;
   grid-row-start: 2;
-  margin:0;
+  margin: 0;
 }
 .wastage {
   display: grid;
@@ -72,7 +71,7 @@
   text-align: center;
   grid-column-start: 6;
   grid-row-start: 2;
-  margin:0;
+  margin: 0;
 }
 .sale {
   display: grid;
@@ -80,7 +79,7 @@
   text-align: center;
   grid-column-start: 7;
   grid-row-start: 2;
-  margin:0;
+  margin: 0;
 }
 .closing {
   display: grid;
@@ -90,7 +89,7 @@
   color: red;
   grid-column-start: 8;
   grid-row-start: 2;
-  margin:0;
+  margin: 0;
 }
 .difference {
   display: grid;
@@ -98,7 +97,7 @@
   text-align: center;
   grid-column-start: 9;
   grid-row-start: 2;
-  margin:0;
+  margin: 0;
 }
 .inpute {
   display: grid;
@@ -106,9 +105,8 @@
   grid-column-start: 10;
   padding: 5px;
   grid-row-start: 2;
-  margin-top:0rem;
-  margin-bottom:0rem;
-    
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
 
 .spacer {
@@ -121,7 +119,7 @@
   text-align: center;
   grid-column-start: 11;
   grid-row-start: 2;
-  margin:0;
+  margin: 0;
 }
 .submitstyle {
   display: grid;
@@ -129,13 +127,13 @@
   text-align: center;
   grid-column-start: 12;
   grid-row-start: 1;
-  margin:0;
+  margin: 0;
 }
 
 .rowstyle {
   display: grid;
-  margin-top:0.28rem;
-  margin-bottom:0.1rem;
+  margin-top: 0.28rem;
+  margin-bottom: 0.1rem;
   /* margin-top:0.12rem;
   margin-bottom:1.24rem; */
   text-align: right;
@@ -144,14 +142,13 @@
 /* https://getbootstrap.com/docs/4.0/content/tables/  
  https://itnext.io/building-a-dynamic-controlled-form-in-react-together-794a44ee552c
  */
-  
-  /* height: 400px; */
-  /* grid-row-gap: 10em; */
-  /* grid-column-gap: 1em; */
-  /* justify-content: center; */
-  /* justify-content: space-around; */
-  /* align-content: space-evenly; */
-  /* grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
+
+/* height: 400px; */
+/* grid-row-gap: 10em; */
+/* grid-column-gap: 1em; */
+/* justify-content: center; */
+/* justify-content: space-around; */
+/* align-content: space-evenly; */
+/* grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto; */
-  /* justify-content: space-evenly; */
-  
+/* justify-content: space-evenly; */
