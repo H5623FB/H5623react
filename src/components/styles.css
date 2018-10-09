@@ -1,284 +1,157 @@
+.container{
+  display: grid;
+  grid-auto-flow: auto;
+  text-align: center;
+  justify-items: center;
+  justify-content: center;
+}
+
 .wrapper {
   display: grid;
-  grid-gap: 2px;
+  grid-gap: 4px;
+  grid-column-gap: 6px;
   grid-auto-flow: column;
-  /* grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto; */
-  justify-content: space-evenly;
-  padding: 10px;
-}
-/* .header{
-  position: fixed;
-  left:0;
-  right:0;
-  top:0;
-} */
-.header1 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  grid-column-start: 1;
-  grid-row-start: 1;
   padding: 5px;
-  background-color: rgb(236, 236, 236);
-  font-weight: bold;
+  font-size: 13px;
   text-align: center;
-  border: 1px solid;
+  justify-items: start;
+  justify-content: center;
+  
 }
-.header2 {
+
+.head{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  grid-column-start: 2;
+  grid-template-columns: repeat(12, 1fr);
   grid-row-start: 1;
-  padding: 5px;
-  background-color: rgb(236, 236, 236);
-  font-weight: bold;
-  text-align: center;
-  border: 1px solid;
 }
-.header3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  grid-column-start: 3;
-  grid-row-start: 1;
-  padding: 5px;
-  background-color: rgb(236, 236, 236);
-  font-weight: bold;
-  text-align: center;
-  border: 1px solid;
-}
-.header4 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  grid-column-start: 4;
-  grid-row-start: 1;
-  padding: 5px;
-  background-color: rgb(236, 236, 236);
-  font-weight: bold;
-  text-align: center;
-  border: 1px solid;
-}
-.header5 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  grid-column-start: 5;
-  grid-row-start: 1;
-  padding: 5px;
-  background-color: rgb(236, 236, 236);
-  font-weight: bold;
-  text-align: center;
-  border: 1px solid;
-}
-.header6 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  grid-column-start: 6;
-  grid-row-start: 1;
-  padding: 5px;
-  background-color: rgb(236, 236, 236);
-  font-weight: bold;
-  text-align: center;
-  border: 1px solid;
-}
-.header7 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  grid-column-start: 7;
-  grid-row-start: 1;
-  padding: 5px;
-  background-color: rgb(236, 236, 236);
-  font-weight: bold;
-  text-align: center;
-  border: 1px solid;
-}
-.header8 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  grid-column-start: 8;
-  grid-row-start: 1;
-  padding: 5px;
-  background-color: rgb(236, 236, 236);
-  font-weight: bold;
-  text-align: center;
-  border: 1px solid;
-}
-.header9 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  grid-column-start: 9;
-  grid-row-start: 1;
-  padding: 5px;
-  background-color: rgb(236, 236, 236);
-  font-weight: bold;
-  text-align: center;
-  border: 1px solid;
-}
-.header10 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  grid-column-start: 10;
-  grid-row-start: 1;
-  padding: 5px;
-  background-color: rgb(236, 236, 236);
-  font-weight: bold;
-  text-align: center;
-  border: 1px solid;
-}
-.header11 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  grid-column-start: 11;
-  grid-row-start: 1;
-  padding: 5px;
-  background-color: rgb(236, 236, 236);
-  font-weight: bold;
-  text-align: center;
-  border: 1px solid;
-}
+
 .items {
   display: grid;
   padding: 5px;
+  text-align: center;
   font-weight: bold;
-  justify-content: space-evenly;
-  text-align: center;
   grid-column-start: 1;
-}
-.opening {
-  display: grid;
-  padding: 5px;
-  justify-content: space-evenly;
-  text-align: center;
-  align-items: baseline;
-  grid-column-start: 2;
-}
-.sale {
-  display: grid;
-  padding: 5px;
-  align-items: baseline;
-  justify-content: space-evenly;
-  text-align: center;
-  grid-column-start: 3;
-}
-.comments {
-  display: grid;
-  padding: 5px;
-  align-items: baseline;
-  justify-content: space-evenly;
-  text-align: center;
-  grid-column-start: 10;
-}
-.delivered {
-  display: grid;
-  padding: 5px;
-  align-items: baseline;
-  justify-content: space-evenly;
-  text-align: center;
-  grid-column-start: 4;
-}
-.difference {
-  display: grid;
-  padding: 5px;
-  align-items: baseline;
-  justify-content: space-evenly;
-  text-align: center;
-  grid-column-start: 8;
+  grid-row-start: 2;
+  margin:0;
 }
 .par {
   display: grid;
   padding: 5px;
-  align-items: baseline;
-  justify-content: space-evenly;
   text-align: center;
   grid-column-start: 2;
+  grid-row-start: 2;
+  margin:0;
+}
+.opening {
+  display: grid;
+  padding: 5px;
+  text-align: center;
+  grid-column-start: 3;
+  grid-row-start: 2;
+  margin:0;
+}
+.delivered {
+  display: grid;
+  padding: 5px;
+  text-align: center;
+  grid-column-start: 4;
+  grid-row-start: 2;
+  margin:0;
 }
 .transfers {
   display: grid;
   padding: 5px;
-  align-items: baseline;
-  justify-content: space-evenly;
   text-align: center;
   grid-column-start: 5;
+  grid-row-start: 2;
+  margin:0;
 }
 .wastage {
   display: grid;
   padding: 5px;
-  align-items: baseline;
-  justify-content: space-evenly;
   text-align: center;
   grid-column-start: 6;
+  grid-row-start: 2;
+  margin:0;
 }
-
+.sale {
+  display: grid;
+  padding: 5px;
+  text-align: center;
+  grid-column-start: 7;
+  grid-row-start: 2;
+  margin:0;
+}
 .closing {
   display: grid;
   padding: 5px;
-  align-items: baseline;
-  justify-content: space-evenly;
   font-weight: bold;
   text-align: center;
   color: red;
   grid-column-start: 8;
+  grid-row-start: 2;
+  margin:0;
+}
+.difference {
+  display: grid;
+  padding: 5px;
+  text-align: center;
+  grid-column-start: 9;
+  grid-row-start: 2;
+  margin:0;
 }
 .inpute {
   display: grid;
+  text-align: center;
   grid-column-start: 10;
-  align-items: baseline;
-  justify-content: space-evenly;
+  padding: 5px;
+  grid-row-start: 2;
+  margin-top:0rem;
+  margin-bottom:0rem;
+    
 }
-.inputee {
+
+.spacer {
+  flex: 1;
+}
+
+.comments {
   display: grid;
-  grid-column-start: 6;
+  padding: 5px;
+  text-align: center;
+  grid-column-start: 11;
+  grid-row-start: 2;
+  margin:0;
 }
+.submitstyle {
+  display: grid;
+  padding: 5px;
+  text-align: center;
+  grid-column-start: 12;
+  grid-row-start: 1;
+  margin:0;
+}
+
 .rowstyle {
   display: grid;
-  background-color: rgb(251, 251, 251);
+  margin-top:0.28rem;
+  margin-bottom:0.1rem;
+  /* margin-top:0.12rem;
+  margin-bottom:1.24rem; */
+  text-align: right;
+  background-color: rgb(248, 248, 248);
 }
-/* .navbar {
-  display: flex;
-  display: flex;
-  padding: 8px;
-  font-family: sans-serif;
-  color: white;
-} */
-
-/* .wrapper {
-    display: grid;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-    align-content: center;
-    grid-template-columns: 20fr ;
-} */
-/* .wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
-  }
-  .one {
-    grid-column: 1 / 3;
-    grid-row: 1;
-  }
-  .two { 
-    grid-column: 2 / 4;
-    grid-row: 1 / 3;
-  }
-  .three {
-    grid-column: 1;
-    grid-row: 2 / 5;
-  }
-  .four {
-    grid-column: 3;
-    grid-row: 3;
-  }
-  .five {
-    grid-column: 2;
-    grid-row: 4;
-  }
-  .six {
-    grid-column: 3;
-    grid-row: 4;
-  } */
 /* https://getbootstrap.com/docs/4.0/content/tables/  
  https://itnext.io/building-a-dynamic-controlled-form-in-react-together-794a44ee552c
  */
+  
+  /* height: 400px; */
+  /* grid-row-gap: 10em; */
+  /* grid-column-gap: 1em; */
+  /* justify-content: center; */
+  /* justify-content: space-around; */
+  /* align-content: space-evenly; */
+  /* grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto; */
+  /* justify-content: space-evenly; */
+  

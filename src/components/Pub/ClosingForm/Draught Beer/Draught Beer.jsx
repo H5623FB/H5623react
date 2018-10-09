@@ -157,7 +157,7 @@ class ClosingForm extends Component {
     this.cancelCourse();
   };
   cancelCourse = () => {
-    document.getElementById("soft").reset();
+    document.getElementById("myform").reset();
   };
 
   render() {
@@ -174,7 +174,7 @@ class ClosingForm extends Component {
           <Closing closing={this.state.closing} />
           <Difference difference={this.state.difference} />
           <UpdateClosing rid={this.state.rid} change={this.handleChange} />
-          {/* <Comments comments={this.state.comments} /> */}
+          <Comments comments={this.state.comments} />
           <Submit submit={this.submitChange} />
         </div>
       </React.Fragment>

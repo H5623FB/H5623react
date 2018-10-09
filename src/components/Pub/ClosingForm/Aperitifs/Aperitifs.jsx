@@ -14,11 +14,11 @@ import {
   Transfers,
   Wastage,
   UpdateClosing
-} from "./softDrinkParts";
+} from "./AperitifsParts";
 import Submit from "../submit";
 import "../../../styles.css";
 
-class ClosingForm extends Component {
+class Aperitifs extends Component {
   state = {
     items: [],
     opening: [],
@@ -34,19 +34,19 @@ class ClosingForm extends Component {
     value: ""
   };
   componentWillMount() {
-    let itemRef = fire.database().ref("ILEC/Pub/ClosingForm/SoftDrinks/Items");
+    let itemRef = fire.database().ref("ILEC/Pub/ClosingForm/Aperitifs/Items");
     itemRef.on("value", snapshot => {
       let items = { id: snapshot.key, text: snapshot.val() };
       let itemnames = items.text;
       this.setState({ items: itemnames });
     });
-    let openRef = fire.database().ref("ILEC/Pub/ClosingForm/SoftDrinks/Open");
+    let openRef = fire.database().ref("ILEC/Pub/ClosingForm/Aperitifs/Open");
     openRef.on("value", snapshot => {
       let opening = { id: snapshot.key, text: snapshot.val() };
       let openingqty = opening.text;
       this.setState({ opening: openingqty });
     });
-    let saleRef = fire.database().ref("ILEC/Pub/ClosingForm/SoftDrinks/Sold");
+    let saleRef = fire.database().ref("ILEC/Pub/ClosingForm/Aperitifs/Sold");
     saleRef.on("value", snapshot => {
       let sale = { id: snapshot.key, text: snapshot.val() };
       let saleqty = sale.text;
@@ -54,13 +54,13 @@ class ClosingForm extends Component {
     });
     let closingRef = fire
       .database()
-      .ref("ILEC/Pub/ClosingForm/SoftDrinks/Closing");
+      .ref("ILEC/Pub/ClosingForm/Aperitifs/Close");
     closingRef.on("value", snapshot => {
       let closing = { id: snapshot.key, text: snapshot.val() };
       let closingqty = closing.text;
       this.setState({ closing: closingqty });
     });
-    let ridRef = fire.database().ref("ILEC/Pub/ClosingForm/SoftDrinks/rid");
+    let ridRef = fire.database().ref("ILEC/Pub/ClosingForm/Aperitifs/rid");
     ridRef.on("value", snapshot => {
       let rid = { id: snapshot.key, text: snapshot.val() };
       let ridqty = rid.text;
@@ -68,7 +68,7 @@ class ClosingForm extends Component {
     });
     let commentsRef = fire
       .database()
-      .ref("ILEC/Pub/ClosingForm/SoftDrinks/Comments");
+      .ref("ILEC/Pub/ClosingForm/Aperitifs/Comments");
     commentsRef.on("value", snapshot => {
       let comments = { id: snapshot.key, text: snapshot.val() };
       let commentsqty = comments.text;
@@ -76,7 +76,7 @@ class ClosingForm extends Component {
     });
     let deliveredRef = fire
       .database()
-      .ref("ILEC/Pub/ClosingForm/SoftDrinks/Delivered");
+      .ref("ILEC/Pub/ClosingForm/Aperitifs/Delivered");
     deliveredRef.on("value", snapshot => {
       let delivered = { id: snapshot.key, text: snapshot.val() };
       let deliveredqty = delivered.text;
@@ -84,13 +84,13 @@ class ClosingForm extends Component {
     });
     let differenceRef = fire
       .database()
-      .ref("ILEC/Pub/ClosingForm/SoftDrinks/Difference");
+      .ref("ILEC/Pub/ClosingForm/Aperitifs/Difference");
     differenceRef.on("value", snapshot => {
       let difference = { id: snapshot.key, text: snapshot.val() };
       let differenceqty = difference.text;
       this.setState({ difference: differenceqty });
     });
-    let parRef = fire.database().ref("ILEC/Pub/ClosingForm/SoftDrinks/PAR");
+    let parRef = fire.database().ref("ILEC/Pub/ClosingForm/Aperitifs/PAR");
     parRef.on("value", snapshot => {
       let par = { id: snapshot.key, text: snapshot.val() };
       let parqty = par.text;
@@ -98,7 +98,7 @@ class ClosingForm extends Component {
     });
     let transfersRef = fire
       .database()
-      .ref("ILEC/Pub/ClosingForm/SoftDrinks/Transfers");
+      .ref("ILEC/Pub/ClosingForm/Aperitifs/Transfers");
     transfersRef.on("value", snapshot => {
       let transfers = { id: snapshot.key, text: snapshot.val() };
       let transfersqty = transfers.text;
@@ -106,7 +106,7 @@ class ClosingForm extends Component {
     });
     let wastageRef = fire
       .database()
-      .ref("ILEC/Pub/ClosingForm/SoftDrinks/Wastage");
+      .ref("ILEC/Pub/ClosingForm/Aperitifs/Wastage");
     wastageRef.on("value", snapshot => {
       let wastage = { id: snapshot.key, text: snapshot.val() };
       let wastageqty = wastage.text;
@@ -151,13 +151,13 @@ class ClosingForm extends Component {
     }
     fire
       .database()
-      .ref("ILEC/Pub/ClosingForm/SoftDrinks/Closing")
+      .ref("ILEC/Pub/ClosingForm/Aperitifs/Close")
 
       .set(value);
     this.cancelCourse();
   };
   cancelCourse = () => {
-    document.getElementById("soft").reset();
+    document.getElementById("ape").reset();
   };
 
   render() {
@@ -181,4 +181,4 @@ class ClosingForm extends Component {
     );
   }
 }
-export default ClosingForm;
+export default Aperitifs;

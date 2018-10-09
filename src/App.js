@@ -7,7 +7,7 @@ import SideDrawer from "./components/sidedrawer/sideDrawer";
 import Backdrop from "./components/backdrop/backdrop";
 
 import LoginForm from "./components/loginForm";
-import ClosingForm from "./components/Pub/ClosingForm/SoftDrinks/SoftDrinks";
+import ClosingForm from "./components/Pub/ClosingForm/ClosingForm";
 import Requisitions from "./components/Pub/Requisitions/requisitions";
 import Home from "./components/home";
 

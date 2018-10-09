@@ -115,9 +115,9 @@ const Wastage = ({ wastage }) => (
 const UpdateClosing = ({ rid, change }) => (
   <div>
     <div>
-      <form className="inpute" id="soft">
+      <form id="myform">
         {rid.map(i => (
-          <input
+          <p p="p"><input
             onChange={change}
             size="3"
             // className="form-control-sm"
@@ -125,8 +125,8 @@ const UpdateClosing = ({ rid, change }) => (
             placeholder="Closing"
             key={i}
             id={i}
-            name="soft"
-          />
+            name="myForm"
+          /></p>
         ))}
       </form>
     </div>
