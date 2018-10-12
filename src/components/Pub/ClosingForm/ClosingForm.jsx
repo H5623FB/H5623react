@@ -19,20 +19,19 @@ class ClosingForm extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>
-          <Header />
+        <div className="container">
           <SoftDrinks className="wrapper" />
-          <Aperitifs className="wrapper" />
-          <BAGinBoxCordial className="wrapper" />
-          <BottleBeer className="wrapper" />
           <BottleWater className="wrapper" />
-          <DraughtBeer className="wrapper" />
-          <Liqueurs className="wrapper" />
+          <BottleBeer className="wrapper" />
           <RedWine className="wrapper" />
           <RoseWine className="wrapper" />
-          <SparklingWine className="wrapper" />
-          <Spirits className="wrapper" />
           <WhiteWine className="wrapper" />
+          <SparklingWine className="wrapper" />
+          <Aperitifs className="wrapper" />
+          <Spirits className="wrapper" />
+          <Liqueurs className="wrapper" />
+          <DraughtBeer className="wrapper" />
+          <BAGinBoxCordial className="wrapper" />
         </div>
       </React.Fragment>
     );

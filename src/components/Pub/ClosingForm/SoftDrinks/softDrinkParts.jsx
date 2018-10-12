@@ -1,31 +1,36 @@
 import React from "react";
 import "../../../styles.css";
-
+//style={{ marginTop: "-25px" }}
 const Items = ({ items }) => (
   <div>
-    <div className="items">
-      {items.map((i, y) => (
-        <p className="rowstyle" key={y}>
-          {i}
-        </p>
-      ))}
+    <div style={{ marginTop: "60px" }} className="items">
+      <p className="header_p">Items</p>
     </div>
+    {/* <label className="header_p">Items</label> */}
+    {items.map((i, y) => (
+      <p className="rowstyle" key={y}>
+        {i}
+      </p>
+    ))}
   </div>
 );
 const Opening = ({ opening }) => (
   <div>
-    <div className="opening">
-      {opening.map((o, i) => (
-        <p className="rowstyle" key={i}>
-          {o}
-        </p>
-      ))}
+    <div style={{ marginTop: "60px" }} className="opening">
+      {/* <p className="header_p">Opening</p> */}
     </div>
+    {/* <label className="header_p">Opening</label> */}
+    {opening.map((o, i) => (
+      <p className="rowstyle" key={i}>
+        {o}
+      </p>
+    ))}
   </div>
 );
 const Sale = ({ sale }) => (
   <div>
-    <div className="sale">
+    <div style={{ marginTop: "60px" }} className="sale">
+      {/* <label className="header_p">Sold</label> */}
       {sale.map((s, i) => (
         <p className="rowstyle" key={i}>
           {s}
@@ -36,7 +41,8 @@ const Sale = ({ sale }) => (
 );
 const Closing = ({ closing }) => (
   <div>
-    <div className="closing">
+    <div style={{ marginTop: "60px" }} className="closing">
+      {/* <label className="header_p">Closing</label> */}
       {closing.map((s, i) => (
         <p className="rowstyle" key={i}>
           {s}
@@ -58,7 +64,8 @@ const Comments = ({ comments }) => (
 );
 const Delivered = ({ delivered }) => (
   <div>
-    <div className="delivered">
+    <div style={{ marginTop: "60px" }} className="delivered">
+      {/* <label className="header_p">Delivered</label> */}
       {delivered.map((s, i) => (
         <p className="rowstyle" key={i}>
           {s}
@@ -69,7 +76,8 @@ const Delivered = ({ delivered }) => (
 );
 const Difference = ({ difference }) => (
   <div>
-    <div className="difference">
+    <div style={{ marginTop: "60px" }} className="difference">
+      {/* <label className="header_p">Difference</label> */}
       {difference.map((s, i) => (
         <p className="rowstyle" key={i}>
           {s}
@@ -80,7 +88,8 @@ const Difference = ({ difference }) => (
 );
 const PAR = ({ par }) => (
   <div>
-    <div className="par">
+    <div style={{ marginTop: "60px" }} className="par">
+      {/* <label className="header_p">PAR</label> */}
       {par.map((s, i) => (
         <p className="rowstyle" key={i}>
           {s}
@@ -91,7 +100,8 @@ const PAR = ({ par }) => (
 );
 const Transfers = ({ transfers }) => (
   <div>
-    <div className="transfers">
+    <div style={{ marginTop: "60px" }} className="transfers">
+      {/* <label className="header_p">Transfers</label> */}
       {transfers.map((s, i) => (
         <p className="rowstyle" key={i}>
           {s}
@@ -102,7 +112,8 @@ const Transfers = ({ transfers }) => (
 );
 const Wastage = ({ wastage }) => (
   <div>
-    <div className="wastage">
+    <div style={{ marginTop: "60px" }} className="wastage">
+      {/* <label className="header_p">Wastage</label> */}
       {wastage.map((s, i) => (
         <p className="rowstyle" key={i}>
           {s}
@@ -113,8 +124,9 @@ const Wastage = ({ wastage }) => (
 );
 const UpdateClosing = ({ rid, change }) => (
   <div>
-    <div>
+    <div style={{ marginTop: "60px" }}>
       <form className="inpute" id="soft">
+        {/* <label className="header_p">Update Closing</label> */}
         {rid.map(i => (
           <input
             onChange={change}
