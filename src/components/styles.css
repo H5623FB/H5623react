@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  justify-items: end;
+  justify-items: center;
   overflow: auto;
   /* align-items: start; */
 
@@ -62,9 +62,9 @@
   width: 12rem;
   color: black;
   background-color: rgb(198, 198, 198);
-  height: 1.8rem;
-  border: 3px solid rgb(198, 198, 198);
-  border-radius: 8px;
+  height: 2.4rem;
+  border: 7px solid white;
+  border-radius: 20px 5px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
@@ -78,19 +78,19 @@
   grid-column-start: 2;
   grid-row-start: 2;
   margin: 0;
-  width: 2.1rem;
+  width: 2.3rem;
 }
 .h_par {
   position: fixed;
   align-self: flex-end;
   top: 3.5rem;
-  width: 2.1rem;
+  width: 2.6rem;
   color: black;
   font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 1.8rem;
-  border: 3px solid rgb(198, 198, 198);
-  border-radius: 8px;
+  height: 2.4rem;
+  border: 7px solid white;
+  border-radius: 20px 5px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
@@ -109,13 +109,13 @@
   position: fixed;
   align-self: flex-end;
   top: 3.5rem;
-  width: 3rem;
+  width: 3.4rem;
   color: black;
   font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 1.8rem;
-  border: 3px solid rgb(198, 198, 198);
-  border-radius: 8px;
+  height: 2.4rem;
+  border: 7px solid white;
+  border-radius: 20px 5px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
@@ -135,13 +135,13 @@
   position: fixed;
   align-self: flex-end;
   top: 3.5rem;
-  width: 4.5rem;
+  width: 4.8rem;
   color: black;
   font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 1.8rem;
-  border: 3px solid rgb(198, 198, 198);
-  border-radius: 8px;
+  height: 2.4rem;
+  border: 7px solid white;
+  border-radius: 20px 5px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
@@ -160,17 +160,17 @@
   position: fixed;
   align-self: flex-end;
   top: 3.5rem;
-  width: 4.5rem;
+  width: 4.8rem;
   color: black;
   font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 1.8rem;
-  border: 3px solid rgb(198, 198, 198);
-  border-radius: 8px;
+  height: 2.4rem;
+  border: 7px solid white;
+  border-radius: 20px 5px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
-  grid-row-start: 1;
+  grid-row-start: 1;;
 }
 .wastage {
   display: grid;
@@ -185,13 +185,13 @@
   position: fixed;
   align-self: flex-end;
   top: 3.5rem;
-  width: 4.3rem;
+  width: 4.6rem;
   color: black;
   font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 1.8rem;
-  border: 3px solid rgb(198, 198, 198);
-  border-radius: 8px;
+  height: 2.4rem;
+  border: 7px solid white;
+  border-radius: 20px 5px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
@@ -210,13 +210,13 @@
   position: fixed;
   align-self: flex-end;
   top: 3.5rem;
-  width: 2.8rem;
+  width: 3rem;
   color: black;
   font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 1.8rem;
-  border: 3px solid rgb(198, 198, 198);
-  border-radius: 8px;
+  height: 2.4rem;
+  border: 7px solid white;
+  border-radius: 20px 5px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
@@ -237,13 +237,13 @@
   position: fixed;
   align-self: flex-end;
   top: 3.5rem;
-  width: 3.5rem;
+  width: 4rem;
   color: black;
   font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 1.8rem;
-  border: 3px solid rgb(198, 198, 198);
-  border-radius: 8px;
+  height: 2.4rem;
+  border: 7px solid white;
+  border-radius: 20px 5px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
@@ -266,9 +266,9 @@
   color: black;
   font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 1.8rem;
-  border: 3px solid rgb(198, 198, 198);
-  border-radius: 8px;
+  height: 2.4rem;
+  border: 7px solid white;
+  border-radius: 20px 5px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
@@ -292,9 +292,9 @@
   color: black;
   font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 1.8rem;
-  border: 3px solid rgb(198, 198, 198);
-  border-radius: 8px;
+  height: 2.4rem;
+  border: 7px solid white;
+  border-radius: 20px 5px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
@@ -332,6 +332,15 @@
   margin-bottom:1.24rem; */
   text-align: right;
   background-color: rgb(248, 248, 248);
+}
+
+.home{
+  display: grid;
+  justify-content: center; 
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }
 
 /* https://getbootstrap.com/docs/4.0/content/tables/  

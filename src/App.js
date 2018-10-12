@@ -1,23 +1,42 @@
 import React, { Component } from "react";
 import { ToastContainer } from "react-toastify";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import Toolbar from "./components/toolbar/toolbar";
 import SideDrawer from "./components/sidedrawer/sideDrawer";
 import Backdrop from "./components/backdrop/backdrop";
 
-import LoginForm from "./components/loginForm";
+import Login from "./components/login";
+import Logout from "./components/logout";
 import ClosingForm from "./components/Pub/ClosingForm/ClosingForm";
 import Requisitions from "./components/Pub/Requisitions/requisitions";
 import Home from "./components/home";
 
+import fire from './fbase';
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 class App extends Component {
   state = {
-    sideDrawerOpen: false
+    sideDrawerOpen: false,
+    user:{}
   };
+  componentDidMount(){
+    this.authListener();    
+  }
+  authListener= ()=>{
+    fire.auth().onAuthStateChanged((user)=>{
+      if(user){
+          this.setState({ user });
+          //localStorage.setItem('user', user.uid);  --> not nessesery
+      }else{
+          this.setState({ user: null });
+          //localStorage.removeItem('user');
+      }
+  
+  });
+  }
+    
   drawerToggleClickHandler = () => {
     this.setState(prevState => {
       return { sideDrawerOpen: !prevState.sideDrawerOpen };
@@ -27,8 +46,8 @@ class App extends Component {
     this.setState({ sideDrawerOpen: false });
   };
   render() {
+    const {user} = this.state;
     let backdrop;
-
     if (this.state.sideDrawerOpen) {
       backdrop = <Backdrop click={this.backdropClickHandler} />;
     }
@@ -40,10 +59,22 @@ class App extends Component {
         {backdrop}
         <main style={{ marginTop: "64px" }} className="container">
           <Switch>
-            <Route path="/closing" component={ClosingForm} />
-            <Route path="/requisitions" component={Requisitions} />
-            <Route path="/login" component={LoginForm} />
-            <Route path="/" component={Home} />
+            <Route path="/closing" render= {props => {
+               if (!user) return <Redirect to="/login" />;
+               return <ClosingForm {...props}
+              />;}} />
+            <Route 
+            path="/requisitions"
+             render= {props => {
+               if (!user) return <Redirect to="/login" />;
+               return <Requisitions {...props}
+              />;}} />
+            <Route path="/login" component={Login} />
+            <Route path="/logout" component={Logout} />
+            <Route path="/" render= {props => {
+               if (!user) return <Redirect to="/login" />;
+               return <Home {...props}
+              />;}} />
           </Switch>
         </main>
       </div>
