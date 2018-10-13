@@ -21,6 +21,15 @@ const SideDrawer = props => {
         <li>
           <NavLink to="requisitions">Requisitions</NavLink>
         </li>
+        <li>
+          <NavLink to="wastage">Wastage</NavLink>
+        </li>
+        <li>
+          <NavLink to="login">Login</NavLink>
+        </li>
+        <li>
+          <NavLink to="logout">Logout</NavLink>
+        </li>
       </ul>
     </nav>
   );
