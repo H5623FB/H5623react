@@ -10,6 +10,7 @@ import {
   Delivered
 } from "./Draught BeerParts";
 import Submit from "../submit";
+import AcceptAllButton from "../acceptAllButton";
 import "../../../styles.css";
 
 class DraughtBeerDel extends Component {
@@ -117,6 +118,15 @@ class DraughtBeerDel extends Component {
   cancelCourse = () => {
     document.getElementById("dwdel").reset();
   };
+  acceptAllReq = () => {
+    let req = this.state.requisitions;
+    //req.shift();
+    //console.log(req);
+    fire
+      .database()
+      .ref("ILEC/Pub/ClosingForm/Draught Beer & Cider/Delivered")
+      .set(req);
+  };
 
   render() {
     return (
@@ -129,6 +139,7 @@ class DraughtBeerDel extends Component {
           <UpdateRequisitions rid={this.state.rid} change={this.handleChange} />
           <Submit submit={this.submitChange} />
         </div>
+        <AcceptAllButton requisitions={this.acceptAllReq} />
       </React.Fragment>
     );
   }

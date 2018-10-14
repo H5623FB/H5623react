@@ -10,6 +10,7 @@ import {
   Delivered
 } from "./SparklingWineParts";
 import Submit from "../submit";
+import AcceptAllButton from "../acceptAllButton";
 import "../../../styles.css";
 
 class SparklingWineDel extends Component {
@@ -113,6 +114,15 @@ class SparklingWineDel extends Component {
   cancelCourse = () => {
     document.getElementById("swdel").reset();
   };
+  acceptAllReq = () => {
+    let req = this.state.requisitions;
+    //req.shift();
+    //console.log(req);
+    fire
+      .database()
+      .ref("ILEC/Pub/ClosingForm/Sparkling Wine/Delivered")
+      .set(req);
+  };
 
   render() {
     return (
@@ -125,6 +135,7 @@ class SparklingWineDel extends Component {
           <UpdateRequisitions rid={this.state.rid} change={this.handleChange} />
           <Submit submit={this.submitChange} />
         </div>
+        <AcceptAllButton requisitions={this.acceptAllReq} />
       </React.Fragment>
     );
   }

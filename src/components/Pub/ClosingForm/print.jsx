@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import fire from "../../../fbase";
+import { toast } from "react-toastify";
 import "../../styles.css";
 
 class PrintClosingForm extends Component {
@@ -18,6 +19,7 @@ class PrintClosingForm extends Component {
         .set(printIsFalse);
     }
     setTimeout(printIsFalse, 1000, fire);
+    toast.success("Printing in Process");
   };
 
   render() {
@@ -29,7 +31,7 @@ class PrintClosingForm extends Component {
           onClick={this.printTrue}
           print="print"
         >
-          PrintClosingForm
+          Print Closing Form
         </button>
       </div>
     );

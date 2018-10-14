@@ -10,6 +10,7 @@ import {
   Delivered
 } from "./RedWineParts";
 import Submit from "../submit";
+import AcceptAllButton from "../acceptAllButton";
 import "../../../styles.css";
 
 class RedWineDel extends Component {
@@ -111,6 +112,15 @@ class RedWineDel extends Component {
   cancelCourse = () => {
     document.getElementById("rwdel").reset();
   };
+  acceptAllReq = () => {
+    let req = this.state.requisitions;
+    //req.shift();
+    //console.log(req);
+    fire
+      .database()
+      .ref("ILEC/Pub/ClosingForm/Red Wine/Delivered")
+      .set(req);
+  };
 
   render() {
     return (
@@ -123,6 +133,7 @@ class RedWineDel extends Component {
           <UpdateRequisitions rid={this.state.rid} change={this.handleChange} />
           <Submit submit={this.submitChange} />
         </div>
+        <AcceptAllButton requisitions={this.acceptAllReq} />
       </React.Fragment>
     );
   }
