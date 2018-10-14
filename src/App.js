@@ -10,6 +10,7 @@ import Login from "./components/login";
 import Logout from "./components/logout";
 import ClosingForm from "./components/Pub/ClosingForm/ClosingForm";
 import RequisitionForm from "./components/Pub/Requisitions/requisitions";
+import PubDeliveriesForm from "./components/Pub/Deliveries/deliveries";
 import WastageForm from "./components/Pub/Wastage/wastage";
 import Home from "./components/home";
 
@@ -71,6 +72,13 @@ class App extends Component {
               render={props => {
                 if (!user) return <Redirect to="/login" />;
                 return <RequisitionForm {...props} />;
+              }}
+            />
+            <Route
+              path="/deliveries_pub"
+              render={props => {
+                if (!user) return <Redirect to="/login" />;
+                return <PubDeliveriesForm {...props} />;
               }}
             />
             <Route

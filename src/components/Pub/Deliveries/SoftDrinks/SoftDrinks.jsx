@@ -1,34 +1,24 @@
 import React, { Component } from "react";
 import { toast } from "react-toastify";
 import fire from "../../../../fbase";
-import Submit from "../submit";
-import "../../../styles.css";
+
 import {
   Items,
-  Opening,
-  Sale,
-  Closing,
-  Delivered,
-  Difference,
   PAR,
-  Transfers,
-  Wastage,
-  UpdateClosing
+  Requisitions,
+  UpdateRequisitions,
+  Delivered
 } from "./softDrinkParts";
+import Submit from "../submit";
+import "../../../styles.css";
 
-class ClosingForm extends Component {
+class SoftDel extends Component {
   state = {
     items: [],
-    opening: [],
-    sale: [],
-    closing: [],
-    delivered: [],
-    comments: [],
-    difference: [],
     par: [],
-    transfers: [],
-    wastage: [],
+    requisitions: [],
     rid: [],
+    delivered: [],
     value: ""
   };
   componentWillMount() {
@@ -38,39 +28,20 @@ class ClosingForm extends Component {
       let itemnames = items.text;
       this.setState({ items: itemnames });
     });
-    let openRef = fire.database().ref("ILEC/Pub/ClosingForm/SoftDrinks/Open");
-    openRef.on("value", snapshot => {
-      let opening = { id: snapshot.key, text: snapshot.val() };
-      let openingqty = opening.text;
-      this.setState({ opening: openingqty });
-    });
-    let saleRef = fire.database().ref("ILEC/Pub/ClosingForm/SoftDrinks/Sold");
-    saleRef.on("value", snapshot => {
-      let sale = { id: snapshot.key, text: snapshot.val() };
-      let saleqty = sale.text;
-      this.setState({ sale: saleqty });
-    });
-    let closingRef = fire
+    let requisitionsRef = fire
       .database()
-      .ref("ILEC/Pub/ClosingForm/SoftDrinks/Closing");
-    closingRef.on("value", snapshot => {
-      let closing = { id: snapshot.key, text: snapshot.val() };
-      let closingqty = closing.text;
-      this.setState({ closing: closingqty });
+      .ref("ILEC/Pub/ClosingForm/SoftDrinks/Requisitions");
+    requisitionsRef.on("value", snapshot => {
+      let requisitions = { id: snapshot.key, text: snapshot.val() };
+      let requisitioningqty = requisitions.text;
+      this.setState({ requisitions: requisitioningqty });
     });
+
     let ridRef = fire.database().ref("ILEC/Pub/ClosingForm/SoftDrinks/rid");
     ridRef.on("value", snapshot => {
       let rid = { id: snapshot.key, text: snapshot.val() };
       let ridqty = rid.text;
       this.setState({ rid: ridqty });
-    });
-    let commentsRef = fire
-      .database()
-      .ref("ILEC/Pub/ClosingForm/SoftDrinks/Comments");
-    commentsRef.on("value", snapshot => {
-      let comments = { id: snapshot.key, text: snapshot.val() };
-      let commentsqty = comments.text;
-      this.setState({ comments: commentsqty });
     });
     let deliveredRef = fire
       .database()
@@ -93,22 +64,6 @@ class ClosingForm extends Component {
       let par = { id: snapshot.key, text: snapshot.val() };
       let parqty = par.text;
       this.setState({ par: parqty });
-    });
-    let transfersRef = fire
-      .database()
-      .ref("ILEC/Pub/ClosingForm/SoftDrinks/Transfers");
-    transfersRef.on("value", snapshot => {
-      let transfers = { id: snapshot.key, text: snapshot.val() };
-      let transfersqty = transfers.text;
-      this.setState({ transfers: transfersqty });
-    });
-    let wastageRef = fire
-      .database()
-      .ref("ILEC/Pub/ClosingForm/SoftDrinks/Wastage");
-    wastageRef.on("value", snapshot => {
-      let wastage = { id: snapshot.key, text: snapshot.val() };
-      let wastageqty = wastage.text;
-      this.setState({ wastage: wastageqty });
     });
   }
   handleChange = e => {
@@ -149,13 +104,12 @@ class ClosingForm extends Component {
     }
     fire
       .database()
-      .ref("ILEC/Pub/ClosingForm/SoftDrinks/Closing")
-
+      .ref("ILEC/Pub/ClosingForm/SoftDrinks/Delivered")
       .set(value);
     this.cancelCourse();
   };
   cancelCourse = () => {
-    document.getElementById("soft").reset();
+    document.getElementById("softdel").reset();
   };
 
   render() {
@@ -164,18 +118,13 @@ class ClosingForm extends Component {
         <div className="wrapper">
           <Items items={this.state.items} />
           <PAR par={this.state.par} />
-          <Opening opening={this.state.opening} />
+          <Requisitions requisitions={this.state.requisitions} />
           <Delivered delivered={this.state.delivered} />
-          <Transfers transfers={this.state.transfers} />
-          <Wastage wastage={this.state.wastage} />
-          <Sale sale={this.state.sale} />
-          <Closing closing={this.state.closing} />
-          <Difference difference={this.state.difference} />
-          <UpdateClosing rid={this.state.rid} change={this.handleChange} />
+          <UpdateRequisitions rid={this.state.rid} change={this.handleChange} />
           <Submit submit={this.submitChange} />
         </div>
       </React.Fragment>
     );
   }
 }
-export default ClosingForm;
+export default SoftDel;

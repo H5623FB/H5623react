@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "./header";
 import SoftDrinks from "./SoftDrinks/SoftDrinks";
 import Aperitifs from "./Aperitifs/Aperitifs";
 import BAGinBoxCordial from "./Bag in Box Cordial/Bag in Box Cordial";
@@ -12,6 +11,7 @@ import RoseWine from "./RoseWine/RoseWine";
 import SparklingWine from "./SparklingWine/SparklingWine";
 import Spirits from "./Spirits/Spirits";
 import WhiteWine from "./WhiteWine/WhiteWine";
+import PrintClosingForm from "./print";
 import "../../styles.css";
 
 class ClosingForm extends Component {
@@ -32,6 +32,7 @@ class ClosingForm extends Component {
           <Liqueurs className="wrapper" />
           <DraughtBeer className="wrapper" />
           <BAGinBoxCordial className="wrapper" />
+          <PrintClosingForm />
         </div>
       </React.Fragment>
     );

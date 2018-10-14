@@ -23,6 +23,9 @@ const toolbar = props => (
             <NavLink to="/requisitions">Requisition</NavLink>
           </li>
           <li>
+            <NavLink to="/deliveries_pub">Pub Delivery Management</NavLink>
+          </li>
+          <li>
             <NavLink to="/wastage">Wastage</NavLink>
           </li>
           <li>
