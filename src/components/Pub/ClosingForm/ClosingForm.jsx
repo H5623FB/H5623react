@@ -12,6 +12,7 @@ import SparklingWine from "./SparklingWine/SparklingWine";
 import Spirits from "./Spirits/Spirits";
 import WhiteWine from "./WhiteWine/WhiteWine";
 import PrintClosingForm from "./print";
+
 import "../../styles.css";
 
 class ClosingForm extends Component {

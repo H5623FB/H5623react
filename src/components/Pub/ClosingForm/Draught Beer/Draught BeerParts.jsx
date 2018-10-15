@@ -3,46 +3,42 @@ import "../../../styles.css";
 
 const Items = ({ items }) => (
   <div>
-    <div className="items">
-      {items.map((i, y) => (
-        <p className="rowstyle" key={y}>
-          {i}
-        </p>
-      ))}
-    </div>
+    <label className="h_items">Draught Beers</label>
+    {items.map((i, y) => (
+      <p items="items" className="rowstyle" key={y}>
+        {i}
+      </p>
+    ))}
   </div>
 );
 const Opening = ({ opening }) => (
   <div>
-    <div className="opening">
-      {opening.map((o, i) => (
-        <p className="rowstyle" key={i}>
-          {o}
-        </p>
-      ))}
-    </div>
+    <label className="h_opening">Open</label>
+    {opening.map((o, i) => (
+      <p opening="opening" className="rowstyle" key={i}>
+        {o}
+      </p>
+    ))}
   </div>
 );
 const Sale = ({ sale }) => (
   <div>
-    <div className="sale">
-      {sale.map((s, i) => (
-        <p className="rowstyle" key={i}>
-          {s}
-        </p>
-      ))}
-    </div>
+    <label className="h_sale">Sale</label>
+    {sale.map((s, i) => (
+      <p sale="sale" className="rowstyle" key={i}>
+        {s}
+      </p>
+    ))}
   </div>
 );
 const Closing = ({ closing }) => (
   <div>
-    <div className="closing">
-      {closing.map((s, i) => (
-        <p className="rowstyle" key={i}>
-          {s}
-        </p>
-      ))}
-    </div>
+    <label className="h_closing">Closing</label>
+    {closing.map((s, i) => (
+      <p closing="closing" className="rowstyle" key={i}>
+        {s}
+      </p>
+    ))}
   </div>
 );
 const Comments = ({ comments }) => (
@@ -58,77 +54,71 @@ const Comments = ({ comments }) => (
 );
 const Delivered = ({ delivered }) => (
   <div>
-    <div className="delivered">
-      {delivered.map((s, i) => (
-        <p className="rowstyle" key={i}>
-          {s}
-        </p>
-      ))}
-    </div>
+    <label className="h_delivered">Delivered</label>
+    {delivered.map((s, i) => (
+      <p delivered="delivered" className="rowstyle" key={i}>
+        {s}
+      </p>
+    ))}
   </div>
 );
 const Difference = ({ difference }) => (
   <div>
-    <div className="difference">
-      {difference.map((s, i) => (
-        <p className="rowstyle" key={i}>
-          {s}
-        </p>
-      ))}
-    </div>
+    <label className="h_difference">Diff</label>
+    {difference.map((s, i) => (
+      <p difference="difference" className="rowstyle" key={i}>
+        {s}
+      </p>
+    ))}
   </div>
 );
 const PAR = ({ par }) => (
   <div>
-    <div className="par">
-      {par.map((s, i) => (
-        <p className="rowstyle" key={i}>
-          {s}
-        </p>
-      ))}
-    </div>
+    <label className="h_par">PAR</label>
+    {par.map((s, i) => (
+      <p par="par" className="rowstyle" key={i}>
+        {s}
+      </p>
+    ))}
   </div>
 );
 const Transfers = ({ transfers }) => (
   <div>
-    <div className="transfers">
-      {transfers.map((s, i) => (
-        <p className="rowstyle" key={i}>
-          {s}
-        </p>
-      ))}
-    </div>
+    <label className="h_transfers">Transfers</label>
+    {transfers.map((s, i) => (
+      <p transfers="transfers" className="rowstyle" key={i}>
+        {s}
+      </p>
+    ))}
   </div>
 );
 const Wastage = ({ wastage }) => (
   <div>
-    <div className="wastage">
-      {wastage.map((s, i) => (
-        <p className="rowstyle" key={i}>
-          {s}
-        </p>
-      ))}
-    </div>
+    <label className="h_wastage">Wastage</label>
+    {wastage.map((s, i) => (
+      <p wastage="wastage" className="rowstyle" key={i}>
+        {s}
+      </p>
+    ))}
   </div>
 );
 const UpdateClosing = ({ rid, change }) => (
   <div>
-    <div>
-      <form className="inpute" id="dbeer">
-        {rid.map(i => (
-          <input
-            onChange={change}
-            size="7"
-            // className="form-control-sm"
-            type="text"
-            placeholder="Closing"
-            key={i}
-            id={i}
-            name="dbeer"
-          />
-        ))}
-      </form>
-    </div>
+    <form className="inpute" id="dbeer">
+      <label className="h_inpute">Update</label>
+      {rid.map(i => (
+        <input
+          onChange={change}
+          size="7"
+          // className="form-control-sm"
+          type="text"
+          placeholder="Closing"
+          key={i}
+          id={i}
+          name="dbeer"
+        />
+      ))}
+    </form>
   </div>
 );
 

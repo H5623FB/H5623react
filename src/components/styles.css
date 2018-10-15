@@ -15,14 +15,15 @@
 .wrapper {
   display: grid;
   grid-gap: 2px;
-  grid-column-gap: 0px;
+  grid-column-gap: 10px;
   grid-auto-flow: column;
   padding: 5px;
-  font-size: 12px;
+  font-size: 13px;
   text-align: center;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  top: 0;
 }
 
 .head {
@@ -45,7 +46,7 @@
 
 .items {
   display: grid;
-  padding: 5px;
+  padding: 1px;
   align-items: stretch;
   text-align: center;
   font-weight: bold;
@@ -56,19 +57,19 @@
   /* cursor: -webkit-grab; cursor: grab; */
 }
 .h_items {
-  position: fixed;
-  align-self: flex-end;
-  top: 3.5rem;
+  /* position: fixed; */
+  /* align-self: flex-end; */
+  top: 2.5rem;
   width: 12rem;
   color: black;
   background-color: rgb(198, 198, 198);
-  height: 2.4rem;
-  border: 7px solid white;
-  border-radius: 20px 5px;
+  height: 1.6rem;
+  border: 2px solid white;
+  border-radius: 10px;
   text-align: center;
-  padding: 2px;
-  font-size: 13px;
+  padding: 1px;
   grid-row-start: 1;
+  font-weight: bold;
 }
 .par {
   display: grid;
@@ -80,20 +81,20 @@
   width: 2.3rem;
 }
 .h_par {
-  position: fixed;
-  align-self: flex-end;
-  top: 3.5rem;
-  width: 2.6rem;
+  /* position: fixed;
+  align-self: flex-end; */
+  top: 2.5rem;
+  width: 2.3rem;
   color: black;
-  font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 2.4rem;
-  border: 7px solid white;
-  border-radius: 20px 5px;
+  height: 1.6rem;
+  border: 2px solid white;
+  border-radius: 10px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
   grid-row-start: 1;
+  font-weight: bold;
 }
 .opening {
   display: grid;
@@ -105,20 +106,20 @@
   width: 3rem;
 }
 .h_opening {
-  position: fixed;
-  align-self: flex-end;
-  top: 3.5rem;
-  width: 3.4rem;
+  /* position: fixed;
+  align-self: flex-end; */
+  top: 2.5rem;
+  width: 3rem;
   color: black;
-  font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 2.4rem;
-  border: 7px solid white;
-  border-radius: 20px 5px;
+  height: 1.6rem;
+  border: 2px solid white;
+  border-radius: 10px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
   grid-row-start: 1;
+  font-weight: bold;
 }
 
 .delivered {
@@ -131,20 +132,20 @@
   width: 4.5rem;
 }
 .h_delivered {
-  position: fixed;
-  align-self: flex-end;
-  top: 3.5rem;
-  width: 4.8rem;
+  /* position: fixed;
+  align-self: flex-end; */
+  top: 2.5rem;
+  width: 4.5rem;
   color: black;
-  font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 2.4rem;
-  border: 7px solid white;
-  border-radius: 20px 5px;
+  height: 1.6rem;
+  border: 2px solid white;
+  border-radius: 10px;
   text-align: center;
   padding: 2px;
-  font-size: 13px;
+  font-size: 12px;
   grid-row-start: 1;
+  font-weight: bold;
 }
 .transfers {
   display: grid;
@@ -156,20 +157,20 @@
   width: 4.5rem;
 }
 .h_transfers {
-  position: fixed;
-  align-self: flex-end;
-  top: 3.5rem;
-  width: 4.8rem;
+  /* position: fixed;
+  align-self: flex-end; */
+  top: 2.5rem;
+  width: 4.5rem;
   color: black;
-  font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 2.4rem;
-  border: 7px solid white;
-  border-radius: 20px 5px;
+  height: 1.6rem;
+  border: 2px solid white;
+  border-radius: 10px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
   grid-row-start: 1;
+  font-weight: bold;
 }
 .wastage {
   display: grid;
@@ -181,20 +182,20 @@
   width: 4.3rem;
 }
 .h_wastage {
-  position: fixed;
-  align-self: flex-end;
-  top: 3.5rem;
-  width: 4.6rem;
+  /* position: fixed;
+  align-self: flex-end; */
+  top: 2.5rem;
+  width: 4.3rem;
   color: black;
-  font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 2.4rem;
-  border: 7px solid white;
-  border-radius: 20px 5px;
+  height: 1.6rem;
+  border: 2px solid white;
+  border-radius: 10px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
   grid-row-start: 1;
+  font-weight: bold;
 }
 .sale {
   display: grid;
@@ -206,20 +207,20 @@
   width: 2.8rem;
 }
 .h_sale {
-  position: fixed;
-  align-self: flex-end;
-  top: 3.5rem;
-  width: 3rem;
+  /* position: fixed;
+  align-self: flex-end; */
+  top: 2.5rem;
+  width: 2.8rem;
   color: black;
-  font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 2.4rem;
-  border: 7px solid white;
-  border-radius: 20px 5px;
+  height: 1.6rem;
+  border: 2px solid white;
+  border-radius: 10px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
   grid-row-start: 1;
+  font-weight: bold;
 }
 .closing {
   display: grid;
@@ -233,20 +234,19 @@
   width: 3.5rem;
 }
 .h_closing {
-  position: fixed;
-  align-self: flex-end;
-  top: 3.5rem;
-  width: 4rem;
+  /* position: fixed;
+  align-self: flex-end; */
+  top: 2.5rem;
+  width: 3.5rem;
   color: black;
-  font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 2.4rem;
-  border: 7px solid white;
-  border-radius: 20px 5px;
+  height: 1.6rem;
+  border: 2px solid white;
+  border-radius: 10px;
   text-align: center;
   padding: 2px;
-  font-size: 13px;
   grid-row-start: 1;
+  font-weight: bold;
 }
 .difference {
   display: grid;
@@ -255,23 +255,24 @@
   grid-column-start: 9;
   grid-row-start: 2;
   margin: 0;
+  color: red;
   width: 2.7rem;
 }
 .h_difference {
-  position: fixed;
-  align-self: flex-end;
-  top: 3.5rem;
+  /* position: fixed;
+  align-self: flex-end; */
+  top: 2.5rem;
   width: 2.7rem;
   color: black;
-  font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 2.4rem;
-  border: 7px solid white;
-  border-radius: 20px 5px;
+  height: 1.6rem;
+  border: 2px solid white;
+  border-radius: 10px;
   text-align: center;
   padding: 2px;
   font-size: 13px;
   grid-row-start: 1;
+  font-weight: bold;
 }
 .inpute {
   display: grid;
@@ -281,23 +282,23 @@
   grid-row-start: 2;
   margin-top: 0rem;
   margin-bottom: 0rem;
-  row-gap: 2.5px;
+  grid-row-gap: 0.05rem;
 }
 .h_inpute {
-  position: fixed;
-  align-self: flex-end;
-  top: 3.5rem;
-  width: 5.5rem;
+  /* position: fixed; */
+  /* align-self: flex-end; */
+  top: 2.5rem;
+  margin-bottom: 0.7rem;
+  width: 4rem;
   color: black;
-  font-weight: bold;
   background-color: rgb(198, 198, 198);
-  height: 2.4rem;
-  border: 7px solid white;
-  border-radius: 20px 5px;
+  height: 1.6rem;
+  border: 2px solid white;
+  border-radius: 10px;
   text-align: center;
   padding: 2px;
-  font-size: 13px;
   grid-row-start: 1;
+  font-weight: bold;
 }
 
 .spacer {

@@ -56,7 +56,7 @@ class Login extends Component {
           <b>Email</b>
         </label>
         <input
-          className="form-control"
+          className="form-control-lg"
           value={this.state.email}
           id="email"
           onChange={this.handleChange}
@@ -69,7 +69,7 @@ class Login extends Component {
           <b>Password</b>
         </label>
         <input
-          className="form-control"
+          className="form-control-lg"
           value={this.state.password}
           id="pass"
           onChange={this.handleChange}
