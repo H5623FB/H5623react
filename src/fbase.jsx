@@ -1,13 +1,13 @@
 import firebase from "firebase";
 
 var config = {
-apiKey: "AIzaSyCAwjqx9VXwTmUNoCTS7KenpL1N_E9xLSg",
-authDomain: "sheet-b7292.firebaseapp.com",
-databaseURL: "https://sheet-b7292.firebaseio.com",
-projectId: "sheet-b7292",
-storageBucket: "sheet-b7292.appspot.com",
-messagingSenderId: "642513919721"
-};
+    apiKey: "AIzaSyDtXfHLiQnff5cB6POkHcn2_uVOh1PsEBY",
+    authDomain: "fbcc-e51e7.firebaseapp.com",
+    databaseURL: "https://fbcc-e51e7.firebaseio.com",
+    projectId: "fbcc-e51e7",
+    storageBucket: "fbcc-e51e7.appspot.com",
+    messagingSenderId: "279321215698"
+  };
 //firebase.initializeApp(config);
 var fire = firebase.initializeApp(config);
 export default fire;
