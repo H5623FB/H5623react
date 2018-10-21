@@ -30,7 +30,7 @@ class BottleWater extends Component {
     transfers: [],
     wastage: [],
     rid: [],
-    value: ""
+    value: []
   };
   componentWillMount() {
     let itemRef = fire.database().ref("ILEC/Pub/ClosingForm/BottleWater/Items");
@@ -119,7 +119,11 @@ class BottleWater extends Component {
   };
   submitChange = e => {
     e.preventDefault();
-    let value = this.state.value;
+    let values = this.state.value;
+    let valueArr = Object.keys(values).map(i => values[i]);
+    let value = valueArr.map(function(item) {
+      return parseInt(item, 10);
+    });
     let str = [];
     let ridLen = this.state.rid.length;
     const errors = {};
@@ -151,14 +155,33 @@ class BottleWater extends Component {
     fire
       .database()
       .ref("ILEC/Pub/ClosingForm/BottleWater/Close")
-
       .set(value);
     this.cancelCourse();
+    this.calcDiff(value);
   };
   cancelCourse = () => {
     document.getElementById("water").reset();
   };
-
+  calcDiff = value => {
+    let closing = value;
+    let opening = this.state.opening;
+    let delivered = this.state.delivered;
+    let transfers = this.state.transfers;
+    let wastage = this.state.wastage;
+    let sale = this.state.sale;
+    let diffs = opening.map(
+      (a, i) =>
+        -1 *
+        (a + delivered[i] + transfers[i] + wastage[i] + sale[i] - closing[i])
+    );
+    let diff = diffs.map(e => {
+      return Number(e.toFixed(2));
+    });
+    fire
+      .database()
+      .ref("ILEC/Pub/ClosingForm/BottleWater/Difference")
+      .set(diff);
+  };
   render() {
     return (
       <React.Fragment>

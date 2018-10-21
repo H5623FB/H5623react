@@ -85,8 +85,10 @@ class Login extends Component {
         >
           Login
         </button>
-        {/* <button onClick={this.signUp} type="submit">SignUp</button>
-        <button className="btn btn-success btn" onClick={this.logout} type="submit">Logout</button>  */}
+        {/* <button onClick={this.signUp} type="submit">
+          SignUp
+        </button> */}
+        {/* <button className="btn btn-success btn" onClick={this.logout} type="submit">Logout</button>  */}
       </div>
     );
   }

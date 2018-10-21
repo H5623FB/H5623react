@@ -6,8 +6,7 @@ import {
   Items,
   PAR,
   Requisitions,
-  UpdateRequisitions,
-  Delivered
+  UpdateRequisitions
 } from "./Draught BeerParts";
 import Submit from "../submit";
 import "../../../styles.css";
@@ -18,7 +17,6 @@ class DraughtBeerReq extends Component {
     par: [],
     requisitions: [],
     rid: [],
-    delivered: [],
     value: ""
   };
   componentWillMount() {
@@ -47,14 +45,14 @@ class DraughtBeerReq extends Component {
       let ridqty = rid.text;
       this.setState({ rid: ridqty });
     });
-    let deliveredRef = fire
-      .database()
-      .ref("ILEC/Pub/ClosingForm/Draught Beer & Cider/Delivered");
-    deliveredRef.on("value", snapshot => {
-      let delivered = { id: snapshot.key, text: snapshot.val() };
-      let deliveredqty = delivered.text;
-      this.setState({ delivered: deliveredqty });
-    });
+    // let deliveredRef = fire
+    //   .database()
+    //   .ref("ILEC/Pub/ClosingForm/Draught Beer & Cider/Delivered");
+    // deliveredRef.on("value", snapshot => {
+    //   let delivered = { id: snapshot.key, text: snapshot.val() };
+    //   let deliveredqty = delivered.text;
+    //   this.setState({ delivered: deliveredqty });
+    // });
     let differenceRef = fire
       .database()
       .ref("ILEC/Pub/ClosingForm/Draught Beer & Cider/Difference");
@@ -79,7 +77,11 @@ class DraughtBeerReq extends Component {
   };
   submitChange = e => {
     e.preventDefault();
-    let value = this.state.value;
+    let values = this.state.value;
+    let valueArr = Object.keys(values).map(i => values[i]);
+    let value = valueArr.map(function(item) {
+      return parseInt(item, 10);
+    });
     let str = [];
     let ridLen = this.state.rid.length;
     const errors = {};
@@ -125,7 +127,7 @@ class DraughtBeerReq extends Component {
           <Items items={this.state.items} />
           <PAR par={this.state.par} />
           <Requisitions requisitions={this.state.requisitions} />
-          <Delivered delivered={this.state.delivered} />
+          {/* <Delivered delivered={this.state.delivered} /> */}
           <UpdateRequisitions rid={this.state.rid} change={this.handleChange} />
           <Submit submit={this.submitChange} />
         </div>

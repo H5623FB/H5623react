@@ -118,7 +118,11 @@ class ClosingForm extends Component {
   };
   submitChange = e => {
     e.preventDefault();
-    let value = this.state.value;
+    let values = this.state.value;
+    let valueArr = Object.keys(values).map(i => values[i]);
+    let value = valueArr.map(function(item) {
+      return parseInt(item, 10);
+    });
     let str = [];
     let ridLen = this.state.rid.length;
     const errors = {};
@@ -150,12 +154,32 @@ class ClosingForm extends Component {
     fire
       .database()
       .ref("ILEC/Pub/ClosingForm/SoftDrinks/Closing")
-
       .set(value);
     this.cancelCourse();
+    this.calcDiff(value);
   };
   cancelCourse = () => {
     document.getElementById("soft").reset();
+  };
+  calcDiff = value => {
+    let closing = value;
+    let opening = this.state.opening;
+    let delivered = this.state.delivered;
+    let transfers = this.state.transfers;
+    let wastage = this.state.wastage;
+    let sale = this.state.sale;
+    let diffs = opening.map(
+      (a, i) =>
+        -1 *
+        (a + delivered[i] + transfers[i] + wastage[i] + sale[i] - closing[i])
+    );
+    let diff = diffs.map(e => {
+      return Number(e.toFixed(2));
+    });
+    fire
+      .database()
+      .ref("ILEC/Pub/ClosingForm/SoftDrinks/Difference")
+      .set(diff);
   };
 
   render() {

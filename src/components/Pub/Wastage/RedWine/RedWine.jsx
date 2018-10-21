@@ -44,7 +44,11 @@ class RedWineWastage extends Component {
   };
   submitChange = e => {
     e.preventDefault();
-    let value = this.state.value;
+    let values = this.state.value;
+    let valueArr = Object.keys(values).map(i => values[i]);
+    let value = valueArr.map(function(item) {
+      return parseInt(item, 10);
+    });
     let str = [];
     let ridLen = this.state.rid.length;
     const errors = {};

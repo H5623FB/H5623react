@@ -52,15 +52,15 @@ const UpdateRequisitions = ({ rid, change }) => (
     </form>
   </div>
 );
-const Delivered = ({ delivered }) => (
-  <div>
-    <label className="h_delivered">Delivered</label>
-    {delivered.map((s, i) => (
-      <p className="rowstyle" key={i}>
-        {s}
-      </p>
-    ))}
-  </div>
-);
+// const Delivered = ({ delivered }) => (
+//   <div>
+//     <label className="h_delivered">Delivered</label>
+//     {delivered.map((s, i) => (
+//       <p className="rowstyle" key={i}>
+//         {s}
+//       </p>
+//     ))}
+//   </div>
+// );
 
-export { Items, PAR, Requisitions, UpdateRequisitions, Delivered };
+export { Items, PAR, Requisitions, UpdateRequisitions };
