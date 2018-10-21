@@ -117,9 +117,8 @@ class SoftDel extends Component {
     document.getElementById("softdel").reset();
   };
   acceptAllReq = () => {
-    let req = this.state.requisitions;
-    req.shift();
-    //console.log(req);
+    let req = { ...this.state.requisitions };
+    //req.shift();
     fire
       .database()
       .ref("ILEC/Pub/ClosingForm/SoftDrinks/Delivered")
